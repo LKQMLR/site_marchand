@@ -1,0 +1,25 @@
+{
+  "name": "site_marchand",
+  "version": "1.0.0",
+  "description": "boutique e-commerce pour mon projet étudiant 3WA",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/LKQMLR/site_marchand.git"
+  },
+  "author": "LKQMLR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LKQMLR/site_marchand/issues"
+  },
+  "homepage": "https://github.com/LKQMLR/site_marchand#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.3"
+  }
+}
