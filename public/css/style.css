@@ -13,13 +13,14 @@ html {
 .header_container {
     display: flex;
     flex-direction: column;
+    height: 35vh;
+
 }
 .banner {
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 16rem;
+    min-height: 80%;
 }
 .logo {
     width: 120px;
@@ -27,9 +28,12 @@ html {
 
 /* NAVBAR */
 #nav {
-    border: 1px solid black;
+    position: relative;
     display: flex;
-    height: 4rem;
+    height: 20%;
+}
+#nav.active .nav_links {
+    left: 0;
 }
 .burger_menu {
     border: 1px solid red;
@@ -39,9 +43,12 @@ html {
     align-items: center;
     justify-content: center;
 }
+.burger_button {
+    padding: 2px;
+}
 .burger_bar {
     height: 0.3rem;
-    margin: 2px;
+    margin: 6px;
     width: 3.5rem;
     border-radius: 3px;
     background-color: black;
@@ -50,13 +57,18 @@ ul {
     list-style: none;
 }
 .nav_links {
+    position: absolute;
+    left: -100%;
+    top: 45px;
+
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
 
-}
-.nav_links> li {
-    display: none;
+    width: 100%;
+    
+    border: 1px solid green;
+    transition: 0.2s ease-in-out;
 }
 .nav_links, a {
     font-size: 1.4rem;
@@ -69,9 +81,20 @@ ul {
     width: 20rem;
 }
 
-@media screen and (min-width : 980px) {
+@media screen and (min-width : 720px) {
     body {
-        width: 1024px;
+        max-width: 980px;
         margin: 0 auto;
+    }
+
+    /* NAVBAR */
+    .burger_menu {
+        display: none;
+    }
+    .nav_links {
+        width : 100%
+    }
+    .nav_links> li {
+        display: block;
     }
 }
