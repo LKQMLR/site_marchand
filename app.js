@@ -14,7 +14,12 @@ const PORT = process.env.PORT;
 
 // Permet de servir des fichiers static depuis le dossier public.
 app.use(express.static('public'))
+// Permet de traiter les données soumis à un formulaire
+app.use(express.urlencoded({extended : true}))
+// Point de terminaison d'entrée pour toutes mes routes.
 app.use('/', router);
+
+
 
 
 // Lancement du serveur

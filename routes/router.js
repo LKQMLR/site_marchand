@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { pageAccueil } from "../controllers/accueil.js";
 import { pageLogin } from "../controllers/login.js";
-import { pageInscription } from "../controllers/crud-user/createUser.js";
+import { pageInscription, submitInscription } from "../controllers/crud-user/createUser.js";
 
 
 const router = Router();
@@ -11,7 +11,8 @@ const router = Router();
 // accueil
 router.get('/', pageAccueil);
 // inscription
-router.get('/inscription', pageInscription)
+router.get('/inscription', pageInscription);
+router.post('/inscription', submitInscription);
 // login
 router.get('/login', pageLogin);
 

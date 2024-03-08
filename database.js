@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 
-
+// création d'un pool de connexion pour la gestion des requêtes vers la base de données
 const pool = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -12,7 +12,7 @@ const pool = mysql.createPool({
 
 })
 
-
+// fonction d'ordre supérieur pour se connecter à la base de données (pool.getConnection) et pour executer la requête SQL (connection.query)
 export default(queryString, params, callback) => {
     pool.getConnection((error, connection) => {
         if(error) {
