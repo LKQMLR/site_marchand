@@ -51,6 +51,11 @@ export const submitInscription = (req, res) => {
                     return res.status(500).json({message: 'Erreur serveur'});
                 }
 
+                req.session.userID = user.id;
+                req.session.name = user.name;
+
+                res.status(301).redirect('/');
+
                 if(result) {
                     console.log('Nouvel utilisateur créé! : ', user);
                 }

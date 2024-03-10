@@ -6,6 +6,12 @@ import { pageInscription, submitInscription } from "../controllers/crud-user/cre
 
 const router = Router();
 
+router.use((req, res, next) => {
+    res.locals.userId = req.session.userId;
+    res.locals.name = req.session.name;
+    next();
+})
+
 // ROUTES
 
 // accueil
