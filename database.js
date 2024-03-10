@@ -9,7 +9,7 @@ const pool = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-
+    database: process.env.DB_NAME,
 })
 
 // fonction d'ordre supérieur pour se connecter à la base de données (pool.getConnection) et pour executer la requête SQL (connection.query)
