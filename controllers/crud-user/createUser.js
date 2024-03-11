@@ -41,23 +41,27 @@ export const submitInscription = (req, res) => {
                 lastname: xss(req.body.lastname),
                 email: email,
                 password: hashed,
+                role: 'Administrateur'
             }
 
-            query(`INSERT INTO utilisateurs VALUES (?, ?, ?, ?, ?)`,
-            [user.id, user.name, user.lastname, user.email, user.password],
+            query(`INSERT INTO utilisateurs VALUES (?, ?, ?, ?, ?, ?)`,
+            [user.id, user.name, user.lastname, user.email, user.password, user.role],
             (error, result) => {
                 if(error) {
                     console.error(`Erreur lors de l'ajout de l'utilisateur dans la base de données ${error}`);
                     return res.status(500).json({message: 'Erreur serveur'});
                 }
-
+                
+                req.session.isLogged = true;
                 req.session.userID = user.id;
                 req.session.name = user.name;
+                req.session.role = user.role;
 
                 res.status(301).redirect('/');
 
                 if(result) {
                     console.log('Nouvel utilisateur créé! : ', user);
+                    console.log(req.session.isLogged, req.session.userID, req.session.name, req.session.role);
                 }
             })
         })

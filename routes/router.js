@@ -7,10 +7,20 @@ import { pageInscription, submitInscription } from "../controllers/crud-user/cre
 const router = Router();
 
 router.use((req, res, next) => {
-    res.locals.userId = req.session.userId;
+    res.locals.role = req.session.role;
+    res.locals.userID = req.session.userID;
     res.locals.name = req.session.name;
     next();
 })
+
+// Verification d'authentification
+const checkAuthentication = (req, res, next) => {
+    if(req.session.isLogged === true) {
+        next();
+    } else {
+        res.status(304).redirect('/login');
+    }
+}
 
 // ROUTES
 
@@ -22,6 +32,12 @@ router.post('/inscription', submitInscription);
 // login
 router.get('/login', pageLogin);
 
+
+
+// PAGE TEST
+router.get('/test', checkAuthentication, (req, res) => {
+    res.send('Page TEST')
+})
 
 // Permet l'export de mon fichier router 
 export default router

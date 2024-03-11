@@ -1,6 +1,13 @@
 <%- include('header-html') %>
 
-<h2>Page de connexion</h2>
+<form action="/login" method="post">
+    <label for="email">email</label>
+    <input type="email" id="email" name="email">
 
+    <label for="password">mot de passe</label>
+    <input type="password" id="password" name="password">
+    
+    <a href="#">mot de passe oublié ?</a>
+</form>
 
 <%- include('footer-html') %>
