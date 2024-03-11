@@ -2,12 +2,16 @@
 
 <form action="/login" method="post">
     <label for="email">email</label>
-    <input type="email" id="email" name="email">
+    <input type="email" id="email" name="email" required tabindex="1" aria-label="veuillez saisir votre adresse email">
 
     <label for="password">mot de passe</label>
-    <input type="password" id="password" name="password">
+    <input type="password" id="password" name="password" required tabindex="2" aria-label="veuillez saisir votre mot de passe">
 
     <button type="submit">Connexion</button>
+
+    <% if(locals.errorMessage) { %>
+            <%= errorMessage %> 
+    <%}%>
 </form>
 
 <a href="#">mot de passe oublié ?</a>
