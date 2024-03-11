@@ -41,7 +41,7 @@ export const submitInscription = (req, res) => {
                 lastname: xss(req.body.lastname),
                 email: email,
                 password: hashed,
-                role: 'Administrateur'
+                role: 'Admin'
             }
 
             query(`INSERT INTO utilisateurs VALUES (?, ?, ?, ?, ?, ?)`,

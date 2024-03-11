@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { pageAccueil } from "../controllers/accueil.js";
-import { pageLogin } from "../controllers/login.js";
+import { pageLogin, submitLogin } from "../controllers/login.js";
 import { pageInscription, submitInscription } from "../controllers/crud-user/createUser.js";
 
 
@@ -13,9 +13,18 @@ router.use((req, res, next) => {
     next();
 })
 
-// Verification d'authentification
+// Verification d'authentification utilisateurs
 const checkAuthentication = (req, res, next) => {
     if(req.session.isLogged === true) {
+        next();
+    } else {
+        res.status(304).redirect('/login');
+    }
+}
+
+// Verification d'authentification administrateurs
+const checkAdminAuthentication = (req, res, next) => {
+    if(req.session.isLogged === true & req.session.role === 'admin') {
         next();
     } else {
         res.status(304).redirect('/login');
@@ -31,6 +40,7 @@ router.get('/inscription', pageInscription);
 router.post('/inscription', submitInscription);
 // login
 router.get('/login', pageLogin);
+router.post('/login', submitLogin);
 
 
 
