@@ -26,7 +26,13 @@
                 <li><a href="#">Mon Panier</a></li>
             </ul>
             <ul class="login_container">
-                <li><a href="/login">Se Connecter</a></li>
+                <li><a href="#"><img src="svg/user_account.svg" alt="" class="nav_icons"></a></li>
+                <% if(!isLogged) {%>
+                    <li><a href="/login"><img src="svg/login.svg" alt="" class="nav_icons"></a></li>
+                <%}%>
+                <% if(isLogged) { %>
+                    <li><a href="/logout"><img src="svg/logout.svg" alt="" class=""></a></li>
+                <%}%>
             </ul>
         </nav>
     </header>
