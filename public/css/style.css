@@ -20,11 +20,12 @@ html {
     justify-content: center;
     align-items: center;
     height: 160px;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
+    border-left: 2px solid #2D232E;
+    border-right: 2px solid #2D232E;
+    border-bottom: 2px solid #2D232E;
 }
 .logo {
-    width: 200px;
+    width: 150px;
 }
 
 /* NAVBAR */
@@ -32,8 +33,10 @@ html {
     position: relative;
     display: flex;
     height: 45px;
+    margin: 5px;
 
-    border: 2px solid black;
+    border: 2px solid #2D232E;
+    background-color: #8688AC;
 }
 #nav.active .nav_links {
     left: 0;
@@ -53,7 +56,7 @@ html {
     margin: 6px;
     width: 35px;
     border-radius: 9px;
-    background-color: black;
+    background-color: #2D232E;
 }
 ul {
     list-style: none;
@@ -73,15 +76,17 @@ ul {
 }
 .nav_links, a {
     text-decoration: none;
-    font-size: 1.6rem;
+    font-size: 2rem;
+
+    color: #EEE5E9;
 }
 .login_container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+
     width: 200px;
 
-    border-left: 1px solid black;
+    border-left: 1px solid #2D232E;
 }
 
 
