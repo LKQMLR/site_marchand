@@ -35,7 +35,7 @@ html {
     height: 45px;
     margin: 5px;
 
-    border: 2px solid #2D232E;
+    border: 2px solid black;
     background-color: #8688AC;
 }
 #nav.active .nav_links {
@@ -63,14 +63,16 @@ ul {
 }
 .nav_links {
     position: absolute;
-    left: -100%;
-    top: 32px;
+    left: -120%;
+    top: 45px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
     width: 100%;
+
+    background-color: #8688AC;
     
     transition: 0.2s ease-in-out;
 }
@@ -79,15 +81,32 @@ ul {
     font-size: 2rem;
 
     color: #EEE5E9;
+
 }
 .login_container {
-    display: flex;
-    justify-content: space-evenly;
-
     width: 200px;
 
-    border-left: 1px solid #2D232E;
+    border-left: 2px solid #2D232E;
 }
+.login_container, li {
+    height: 100%;
+}
+.login_container, li > a {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* PAGE ACCUEIL */
+
+.slider_1 {
+    border: 2px solid black;
+    height: 280px;
+    display: flex;
+    overflow: hidden;
+}
+
 
 
 @media screen and (min-width : 720px) {
