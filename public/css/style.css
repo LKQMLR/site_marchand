@@ -75,6 +75,7 @@ ul {
     background-color: #8688AC;
     
     transition: 0.2s ease-in-out;
+    z-index: 1;
 }
 .nav_links, a {
     text-decoration: none;
@@ -109,6 +110,7 @@ ul {
 .slider {
     display: flex;
     animation: slider-1 12s infinite ease-in-out;
+    height: 100%;
 }
 @keyframes slider-1 {
     0%,
@@ -130,6 +132,11 @@ ul {
     100% {
         transform: translateX(-400%);
     }
+}
+.image_slider {
+    width: 100%;
+    height: auto;
+    
 }
 
 @media screen and (min-width : 720px) {
