@@ -103,11 +103,34 @@ ul {
 .slider_1 {
     border: 2px solid black;
     height: 280px;
-    display: flex;
     overflow: hidden;
+
 }
-
-
+.slider {
+    display: flex;
+    animation: slider-1 12s infinite ease-in-out;
+}
+@keyframes slider-1 {
+    0%,
+    20% {
+        transform: translateX(0);
+    }
+    25%,
+    45% {
+        transform: translateX(-100%);
+    }
+    50%,
+    70% {
+        transform: translateX(-200%);
+    }
+    75%,
+    95% {
+        transform: translate(-300%);
+    }
+    100% {
+        transform: translateX(-400%);
+    }
+}
 
 @media screen and (min-width : 720px) {
     body {
