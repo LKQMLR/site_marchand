@@ -37,10 +37,11 @@ export const submitLogin = (req, res) => {
                 req.session.name = result[0].name;
                 req.session.role = result[0].role;
 
-                console.log(`Utilisateur connecté`);
+                console.log(`Utilisateur connecté`, result[0].user_id);
 
-                res.status(304).redirect('/');
+                res.status(304).redirect(`/`);
             } else {
+                console.log('Mot de passe incorrect')
                 return res.render('login.ejs', {errorMessage});
             }
         })

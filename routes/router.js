@@ -2,6 +2,7 @@ import { Router } from "express";
 import { pageAccueil } from "../controllers/accueil.js";
 import { pageLogin, submitLogin } from "../controllers/login.js";
 import { pageInscription, submitInscription } from "../controllers/crud-user/createUser.js";
+import { userAccount } from "../controllers/crud-user/readUser.js";
 
 
 const router = Router();
@@ -42,7 +43,10 @@ router.post('/inscription', submitInscription);
 // login
 router.get('/login', pageLogin);
 router.post('/login', submitLogin);
+// logout
 
+// compte utilisateur
+router.get('/compte-utilisateur/:id', checkAuthentication, userAccount);
 
 
 // PAGE TEST

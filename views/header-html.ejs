@@ -20,18 +20,18 @@
                 </div>
             </div>
             <ul class="nav_links">
-                <li><a href="#">accueil</a></li>
+                <li><a href="/">accueil</a></li>
                 <li><a href="#">la boutique</a></li>
                 <li><a href="/inscription">inscription</a></li>
                 <li><a href="#">Mon Panier</a></li>
             </ul>
             <ul class="login_container">
-                <li><a href="#"><img src="svg/user_account.svg" alt="" class="nav_icons"></a></li>
+                <li><a href="/compte-utilisateur/<%= userID %>"><img src="/svg/user_account.svg" alt="" class="nav_icons"></a></li>
                 <% if(!isLogged) {%>
-                    <li><a href="/login"><img src="svg/login.svg" alt="" class="nav_icons"></a></li>
+                    <li><a href="/login"><img src="/svg/login.svg" alt="" class="nav_icons"></a></li>
                 <%}%>
                 <% if(isLogged) { %>
-                    <li><a href="/logout"><img src="svg/logout.svg" alt="" class=""></a></li>
+                    <li><a href="/logout"><img src="/svg/logout.svg" alt="" class=""></a></li>
                 <%}%>
             </ul>
         </nav>

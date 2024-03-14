@@ -7,7 +7,9 @@
 html {
     font-size: 62.5%;
 }
-
+h2 {
+    font-size: 2.6rem;
+}
 
 
 /* HEADER */
@@ -136,8 +138,12 @@ ul {
 .image_slider {
     width: 100%;
     height: auto;
-    
+
+    flex-shrink: 0;
 }
+
+/* PAGE COMPTE UTILISATEUR */
+
 
 @media screen and (min-width : 720px) {
     body {
