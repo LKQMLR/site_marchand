@@ -1,0 +1,13 @@
+<%- include('header-html') %>
+
+<h2>Modifier informations utilisateur</h2>
+
+<form action="/my-account/update-infos-user/<%= userID %>" method="post">
+    <input type="text" id="name" name="name" tabindex="1" value="<%= user.nom %>">
+    <input type="text" name="lastname" id="lastname" tabindex="2" value="<%= user.prenom %>">
+    <input type="email" name="email" id="email" tabindex="3" value="<%= user.email %>">
+    <button type="submit">enregistrer</button>
+</form>
+
+
+<%- include('footer-html') %>

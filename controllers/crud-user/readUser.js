@@ -10,7 +10,12 @@ export const userAccount = (req, res) => {
     (error, result) => {
         if(error) {
             console.error(`Erreur lors de l'exécution de la requête : ${error}`);
-            return res.status(500).json({errorMessage : 'Erreur serveur'});
+            return res.status(500).json({ERROR : 'Erreur serveur'});
+        }
+
+        if(result.length === 0) {
+            console.error(`ERREUR : l'id : ${id} n'est pas reconnu`);
+            return res.status(500).json({ERROR: `L'id : ${id} n'est pas reconnu`});
         }
 
         res.render('user-account.ejs', {user : result[0]});

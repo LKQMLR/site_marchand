@@ -3,6 +3,8 @@ import { pageAccueil } from "../controllers/accueil.js";
 import { pageLogin, submitLogin } from "../controllers/login.js";
 import { pageInscription, submitInscription } from "../controllers/crud-user/createUser.js";
 import { userAccount } from "../controllers/crud-user/readUser.js";
+import { submitLogout } from "../controllers/logout.js";
+import { submitInfosUserUpdated, updateInfosUser } from "../controllers/crud-user/updateUser.js";
 
 
 const router = Router();
@@ -44,15 +46,13 @@ router.post('/inscription', submitInscription);
 router.get('/login', pageLogin);
 router.post('/login', submitLogin);
 // logout
-
+router.get('/logout', submitLogout);
 // compte utilisateur
-router.get('/compte-utilisateur/:id', checkAuthentication, userAccount);
+router.get('/my-account/:id?', checkAuthentication, userAccount);
+// update utilisateur
+router.get('/my-account/update-infos-user/:id', updateInfosUser);
+router.post('/my-account/update-infos-user/:id', submitInfosUserUpdated);
 
-
-// PAGE TEST
-router.get('/test', checkAuthentication, (req, res) => {
-    res.send('Page TEST')
-})
 
 // Permet l'export de mon fichier router 
 export default router
