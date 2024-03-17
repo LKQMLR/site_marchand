@@ -5,7 +5,17 @@
 <p>Nom: <%= user.nom %></p>
 <p>Prenom: <%= user.prenom %></p>
 <p>Email: <%= user.email %></p>
-<a href="/my-account/update-infos-user/<%= userID %>">Modifier mes informations</a>
+
+<a href="/my-account/update-infos-user/<%= userID %>" id="link_update_user">Modifier mes informations</a>
+
+<form action="/my-account/delete-user/<%= userID %>" method="post">
+    <p>Supprimer mon compte</p>
+    <button type="submit">supprimer</button>
+</form>
 
 
+<script>
+    const updateLink = document.getElementById('link_update_user');
+    
+</script>
 <%- include('footer-html') %>

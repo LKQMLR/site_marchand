@@ -5,6 +5,7 @@ import { pageInscription, submitInscription } from "../controllers/crud-user/cre
 import { userAccount } from "../controllers/crud-user/readUser.js";
 import { submitLogout } from "../controllers/logout.js";
 import { submitInfosUserUpdated, updateInfosUser } from "../controllers/crud-user/updateUser.js";
+import { submitDeleteUser } from "../controllers/crud-user/deleteUser.js";
 
 
 const router = Router();
@@ -52,6 +53,8 @@ router.get('/my-account/:id?', checkAuthentication, userAccount);
 // update utilisateur
 router.get('/my-account/update-infos-user/:id', updateInfosUser);
 router.post('/my-account/update-infos-user/:id', submitInfosUserUpdated);
+// supprimer utilisateur
+router.post('/my-account/delete-user/:id', submitDeleteUser)
 
 
 // Permet l'export de mon fichier router 
