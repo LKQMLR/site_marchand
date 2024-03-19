@@ -6,7 +6,16 @@
 <p>Prenom: <%= user.prenom %></p>
 <p>Email: <%= user.email %></p>
 
-<a href="/my-account/update-infos-user/<%= userID %>" id="link_update_user">Modifier mes informations</a>
+<button class="update_button">modifier informations</button>
+
+<form action="/my-account/check-password" method="post">
+    <div class="check_password_container" id="check-password-container">
+        <p>confirmer votre mot de passe</p>
+        <input type="password" id="password" name="password">
+        <button type="submit">confirmer</button>
+    </div>
+
+</form>
 
 <form action="/my-account/delete-user/<%= userID %>" method="post">
     <p>Supprimer mon compte</p>
@@ -15,7 +24,13 @@
 
 
 <script>
-    const updateLink = document.getElementById('link_update_user');
+
+const updateBtn = document.querySelector('.update_button');
+const checkPassword = document.getElementById('check-password-container');
+
+updateBtn.addEventListener('click', () => {
+    checkPassword.classList.remove('check_password_container');
+})
     
 </script>
 <%- include('footer-html') %>
