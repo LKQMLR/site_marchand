@@ -6,6 +6,7 @@ import { userAccount } from "../controllers/crud-user/readUser.js";
 import { submitLogout } from "../controllers/logout.js";
 import { submitInfosUserUpdated, updateInfosUser } from "../controllers/crud-user/updateUser.js";
 import { submitDeleteUser } from "../controllers/crud-user/deleteUser.js";
+import { checkPassword } from "../controllers/checkPassword.js";
 
 
 const router = Router();
@@ -54,7 +55,9 @@ router.get('/my-account/:id?', checkAuthentication, userAccount);
 router.get('/my-account/update-infos-user/:id', updateInfosUser);
 router.post('/my-account/update-infos-user/:id', submitInfosUserUpdated);
 // supprimer utilisateur
-router.post('/my-account/delete-user/:id', submitDeleteUser)
+router.post('/my-account/delete-user/:id', submitDeleteUser);
+// verification mot de passe utilisateur
+router.post('/my-account/check-password/:id', checkPassword);
 
 
 // Permet l'export de mon fichier router 

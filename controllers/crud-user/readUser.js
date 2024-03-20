@@ -18,6 +18,15 @@ export const userAccount = (req, res) => {
             return res.status(500).json({ERROR: `L'id : ${id} n'est pas reconnu`});
         }
 
-        res.render('user-account.ejs', {user : result[0]});
+        const user = {
+            id,
+            name: result[0].prenom,
+            lastname: result[0].nom,
+            email: result[0].email,
+            password: result[0].mot_de_passe,
+            role: result[0].role
+        }
+
+        res.render('user-account.ejs', {user});
     })
 }

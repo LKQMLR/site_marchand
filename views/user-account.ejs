@@ -2,20 +2,22 @@
 
 <h2>Compte Utilisateur</h2>
 
-<p>Nom: <%= user.nom %></p>
-<p>Prenom: <%= user.prenom %></p>
+<p>Nom: <%= user.lastname %></p>
+<p>Prenom: <%= user.name %></p>
 <p>Email: <%= user.email %></p>
 
 <button class="update_button">modifier informations</button>
 
-<form action="/my-account/check-password" method="post">
+<form action="/my-account/check-password/<%= userID %>" method="post">
     <div class="check_password_container" id="check-password-container">
         <p>confirmer votre mot de passe</p>
         <input type="password" id="password" name="password">
         <button type="submit">confirmer</button>
     </div>
-
 </form>
+<% if(locals.errorMessage) { %>
+    <%= errorMessage %>
+<%}%>
 
 <form action="/my-account/delete-user/<%= userID %>" method="post">
     <p>Supprimer mon compte</p>
