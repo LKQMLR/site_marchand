@@ -1,10 +1,11 @@
 <%- include('header-html') %>
 
 <h2>Compte Utilisateur</h2>
-
-<p>Nom: <%= user.lastname %></p>
-<p>Prenom: <%= user.name %></p>
-<p>Email: <%= user.email %></p>
+<section class="section_infos_user">
+    <p>Nom: <span class="infos_user"><%= user.lastname %></span></p>
+    <p>Prenom: <span class="infos_user"><%= user.name %></span></p>
+    <p>Email: <span class="infos_user"><%= user.email %></span></p>
+</section>
 
 <button class="update_button">modifier informations</button>
 
@@ -20,8 +21,7 @@
 <%}%>
 
 <form action="/my-account/delete-user/<%= userID %>" method="post">
-    <p>Supprimer mon compte</p>
-    <button type="submit">supprimer</button>
+    <button type="submit" class="delete_button">supprimer le compte</button>
 </form>
 
 

@@ -148,9 +148,44 @@ ul {
 }
 
 /* PAGE COMPTE UTILISATEUR */
-
+.section_infos_user {
+    padding: 5px 10px;
+}
+.section_infos_user p {
+    font-size: 1.8rem;
+    margin: 5px 0;
+}
+.infos_user {
+    background-color: lightgray;
+    padding: 0 5px;
+    border-radius: 6px;
+}
+.update_button {
+    margin: 5px 10px;
+    padding: 5px 5px;
+    background-color: #8688AC;
+    color: #EEE5E9;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.update_button:hover {
+    background-color: #676987;
+}
 .check_password_container {
     display: none;
+}
+.delete_button {
+    margin: 5px 10px;
+    padding: 5px 5px;
+    background-color: #E4572E;
+    color: #EEE5E9;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.delete_button:hover {
+    background-color: #b4411d;
 }
 
 
