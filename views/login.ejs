@@ -11,14 +11,14 @@
         <input type="password" id="password" name="password" required  aria-label="veuillez saisir votre mot de passe">
 
         <% if(locals.errorMessage) { %>
-                <%= errorMessage %> 
+                <span class="error_login_message"><%= errorMessage %> </span>
         <%}%>
 
         <button type="submit">Connexion</button>
-    
+        
+        <a href="#">mot de passe oublié ?</a>
     </form>
 
-    <a href="#">mot de passe oublié ?</a>
 </section>
 
 

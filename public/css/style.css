@@ -14,13 +14,15 @@ h2 {
     border-radius: 3px;
     padding: 10px 0;
     margin-bottom: 25px;
+    background-color: #EEE5E9;
+    color: #8688AC;
 }
 input {
     width: 250px;
     height: 30px;
     border: 1px solid ;
     border-radius: 7px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     padding-left: 7px;
     border-color: #8688AC;
 }
@@ -42,6 +44,7 @@ input:focus {
     border-left: 2px solid #2D232E;
     border-right: 2px solid #2D232E;
     border-bottom: 2px solid #2D232E;
+    background-color: #EEE5E9;
 }
 .logo {
     width: 150px;
@@ -209,6 +212,22 @@ ul {
     flex-direction: column;
     align-items: center;
 }
+.form_login button {
+    width: 250px;
+    height: 30px;
+    border-radius: 7px;
+    border: none;
+    background-color: #8688AC;
+    color: #EEE5E9;
+}
+.form_login button:hover {
+    background-color: #676987;
+    cursor: pointer;
+}
+.error_login_message {
+    margin: 5px 0;
+}
+
 @media screen and (min-width : 720px) {
     body {
         max-width: 980px;
