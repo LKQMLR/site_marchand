@@ -1,19 +1,25 @@
 <%- include('header-html') %>
 
-<form action="/login" method="post">
-    <label for="email">email</label>
-    <input type="email" id="email" name="email" required tabindex="1" aria-label="veuillez saisir votre adresse email">
+<h2>connexion</h2>
 
-    <label for="password">mot de passe</label>
-    <input type="password" id="password" name="password" required tabindex="2" aria-label="veuillez saisir votre mot de passe">
+<section class="section_login_user">
+    <form action="/login" method="post" class="form_login">
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" required  aria-label="veuillez saisir votre adresse email">
+    
+        <label for="password">mot de passe</label>
+        <input type="password" id="password" name="password" required  aria-label="veuillez saisir votre mot de passe">
 
-    <button type="submit">Connexion</button>
+        <% if(locals.errorMessage) { %>
+                <%= errorMessage %> 
+        <%}%>
 
-    <% if(locals.errorMessage) { %>
-            <%= errorMessage %> 
-    <%}%>
-</form>
+        <button type="submit">Connexion</button>
+    
+    </form>
 
-<a href="#">mot de passe oublié ?</a>
+    <a href="#">mot de passe oublié ?</a>
+</section>
+
 
 <%- include('footer-html') %>
