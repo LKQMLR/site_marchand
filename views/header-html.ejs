@@ -11,6 +11,11 @@
         <div class="banner">
             <img class="logo" src="/images/logo.png" alt="">
         </div>
+        <% if(isLogged && role === 'Admin') { %>
+            <div class="admin_panel">
+                <p>ADMIN</p>
+            </div>
+        <%}%>
         <nav id="nav">
             <div class="burger_menu">
                 <div class="burger_button">

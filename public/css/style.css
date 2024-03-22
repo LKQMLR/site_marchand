@@ -26,9 +26,27 @@ input {
     padding-left: 7px;
     border-color: #8688AC;
 }
-input:focus {
+input:hover {
     outline: none;
     border-color: #676987;
+}
+input:focus {
+    outline: none;
+}
+button {
+    width: 250px;
+    height: 30px;
+    border-radius: 7px;
+    border: none;
+    background-color: #8688AC;
+    color: #EEE5E9;
+}
+button:hover {
+    background-color: #676987;
+    cursor: pointer;
+}
+section {
+    padding: 20px;
 }
 
 /* HEADER */
@@ -163,9 +181,6 @@ ul {
 }
 
 /* PAGE COMPTE UTILISATEUR */
-.section_infos_user {
-    padding: 5px 10px;
-}
 .section_infos_user p {
     font-size: 1.8rem;
     margin: 5px 0;
@@ -204,28 +219,53 @@ ul {
 }
 
 /* PAGE LOGIN */
-.section_login_user {
-    padding: 20px;
-}
+
 .form_login {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.form_login button {
-    width: 250px;
-    height: 30px;
-    border-radius: 7px;
-    border: none;
-    background-color: #8688AC;
-    color: #EEE5E9;
-}
-.form_login button:hover {
-    background-color: #676987;
-    cursor: pointer;
-}
 .error_login_message {
     margin: 5px 0;
+}
+
+/* ¨PAGE INSCRIPTION  */
+.form_inscription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* PAGE ADMIN  */
+.admin_panel {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    z-index: 999;
+
+    width: 55px;
+    height: 35px;
+
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #676987;
+    color: #EEE5E9;
+    box-shadow: 1px 4px 5px #2D232E;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.admin_panel:hover {
+    background-color: unset;
+    border: 2px solid #676987;
+    border-left: unset;
+    color: #676987;
+}
+.admin_panel:active {
+    background-color: #676987;
+    color: #EEE5E9;
 }
 
 @media screen and (min-width : 720px) {
