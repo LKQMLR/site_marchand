@@ -237,7 +237,7 @@ ul {
 }
 
 /* PAGE ADMIN  */
-.admin_panel {
+.admin_button {
     position: absolute;
     left: 0;
     top: 30px;
@@ -257,15 +257,27 @@ ul {
     align-items: center;
     cursor: pointer;
 }
-.admin_panel:hover {
+.admin_button:hover {
     background-color: unset;
     border: 2px solid #676987;
     border-left: unset;
     color: #676987;
 }
-.admin_panel:active {
+.admin_button:active {
     background-color: #676987;
     color: #EEE5E9;
+}
+.admin_panel {
+    position: absolute;
+    top: 90px;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    background-color: gray;
+}
+.admin_panel.active {
+    left: 0;
 }
 
 @media screen and (min-width : 720px) {
