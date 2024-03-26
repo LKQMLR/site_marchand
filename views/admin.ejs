@@ -1,39 +1,10 @@
 <h2>Administration</h2>
 
-<select name="" id="monSelect">
-    <option value="">Administrateurs</option>
-</select>
+<div id="adminContainer" class="admin_container">
+    <select name="select_input_admin" id="select-input-admin" class="select_admin_list" onchange=></select>
+</div>
 
 <script>
 
-document.addEventListener('DOMContentLoaded', () => {
-    const adminButton = document.querySelector('.admin_button');
-    const adminPanel = document.querySelector('.admin_panel');
-    const select = document.getElementById('monSelect');
-
-    function handleAdminButton() {
-        adminPanel.classList.toggle('active')
-        getAdminData();
-    }
-
-    function getAdminData() {
-        fetch('/admin/data')
-            .then(response => response.json())
-            .then(data => {
-                data.forEach((el) => {
-                    if(el.role === "Admin"){
-                        const option = document.createElement('option');
-                        option.value = el.role;
-                        option.innerText = el.nom;
-
-                        select.appendChild(option);
-                    }
-                })
-            })
-        .catch(error => console.log(error));
-    }
-
-    adminButton.addEventListener('click', handleAdminButton);
-})
 
 </script>

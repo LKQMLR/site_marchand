@@ -244,13 +244,13 @@ ul {
     z-index: 999;
 
     width: 55px;
-    height: 35px;
+    height: 27px;
 
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
-    background-color: #676987;
+    background-color: #8688AC;
     color: #EEE5E9;
-    box-shadow: 1px 4px 5px #2D232E;
+    box-shadow: 1px 2px 5px #2D232E;
 
     display: flex;
     justify-content: center;
@@ -258,13 +258,12 @@ ul {
     cursor: pointer;
 }
 .admin_button:hover {
-    background-color: unset;
     border: 2px solid #676987;
     border-left: unset;
     color: #676987;
 }
 .admin_button:active {
-    background-color: #676987;
+    background-color: #8688AC;
     color: #EEE5E9;
 }
 .admin_panel {
@@ -283,6 +282,13 @@ ul {
 }
 .admin_panel.active {
     left: 0;
+}
+.admin_container {
+    border: 1px solid red;
+}
+.select_admin_list {
+    width: 250px;
+    height: 35px;
 }
 
 @media screen and (min-width : 720px) {

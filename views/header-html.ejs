@@ -12,7 +12,7 @@
             <img class="logo" src="/images/logo.png" alt="">
         </div>
         <% if(isLogged && role === 'Admin') { %>
-            <div class="admin_button">ADMIN</div>
+            <button class="admin_button"><img src="/svg/arrow.svg" alt=""></button>
             <div class="admin_panel">
                 <%- include('admin.ejs') %>
             </div>
