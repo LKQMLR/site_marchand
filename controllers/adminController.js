@@ -2,7 +2,7 @@ import query from '../database.js';
 
 export const listAdmin = (req, res) => {
 
-    query('SELECT * FROM utilisateurs WHERE role = Admin',
+    query(`SELECT * FROM utilisateurs WHERE role = 'Admin'`,
     (error, result) => {
         if(error) {
             console.error(`Erreur lors de l'exécution de la requête : ${error}`);

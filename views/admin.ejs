@@ -1,10 +1,47 @@
 <h2>Administration</h2>
 
-<div id="adminContainer" class="admin_container">
-    <select name="select_input_admin" id="select-input-admin" class="select_admin_list" onchange=></select>
+<div id="admin-container" class="admin_container">
+    <select name="select_input_admin" id="select-input-admin" class="select_admin_list" >
+        <option value="">Administrateurs :</option>
+    </select>
+    <div id="admin-display-infos-container" class="admin_display_infos_container"></div>
+
 </div>
 
 <script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Stock dans des variables mes éléments HTML
+    const adminSelect = document.querySelector('#select-input-admin');
+
+    // Variable contenant les infos d'un administrateur
+    let adminData = [];
+
+    getAdminData(adminSelect);
+
+})
+
+function getAdminData(selectInput) {
+    // fetch pour aller chercher mes données voulues
+    fetch('/admin/data')
+        .then(response => response.json())
+        .then(data => {
+            // je stock les données récupèrer de data vers mon tableau adminData
+            adminData = data;
+            // et je boucle avec forEach
+            adminData.forEach(admin => {
+                // création d'un élément HTML - 'option'
+                const option = document.createElement('option');
+                // je donne a la valeur de l'option l'id de l'admin
+                option.value = admin.user_id;
+                // et son contenu est le prenom de l'admin
+                option.textContent = admin.prenom;
+                // option devient l'enfant de l'input SELECT passé en paramètre
+                selectInput.append(option);
+            })
+        })
+    .catch(error => console.log('fetch erreur : ', error))
+}
 
 
 </script>
